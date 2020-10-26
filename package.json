@@ -1,0 +1,35 @@
+{
+  "name": "horror-db-2.0",
+  "version": "1.0.0",
+  "description": "Horror movie database and community for horror fans",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server",
+    "server": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alxndryn/horror-db-2.0.git"
+  },
+  "author": "Alexander Hogle",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alxndryn/horror-db-2.0/issues"
+  },
+  "homepage": "https://github.com/alxndryn/horror-db-2.0#readme",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "config": "^3.3.2",
+    "express": "^4.17.1",
+    "express-validator": "^6.6.1",
+    "gravatar": "^1.8.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.10",
+    "normalize-url": "^5.3.0"
+  },
+  "devDependencies": {
+    "concurrently": "^5.3.0",
+    "nodemon": "^2.0.6"
+  }
+}
