@@ -3,6 +3,7 @@ const router = express.Router();
 const config = require('config');
 const auth = require('../../middleware/auth');
 const { check, validationResult } = require('express-validator');
+const normalize = require('normalize-url');
 
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
@@ -47,7 +48,7 @@ router.post('/', auth, async (req, res) => {
     bio,
     movies: Array.isArray(movies)
       ? movies
-      : movies.split(',').map((movie) => ' ' + movie.trim())
+      : movies.split(',').map((movie) => movie.trim().replace(/ /g, '+'))
   };
 
   // Build social object and add to profileFields
@@ -73,3 +74,5 @@ router.post('/', auth, async (req, res) => {
   }
 });
 module.exports = router;
+
+// movie.replace(/ /g, '+')
