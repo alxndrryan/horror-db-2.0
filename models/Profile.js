@@ -8,13 +8,9 @@ const ProfileSchema = new mongoose.Schema({
   bio: {
     type: String
   },
-  movie: [
-    {
-      name: {
-        type: String
-      }
-    }
-  ],
+  movies: {
+    type: [String]
+  },
   social: {
     youtube: {
       type: String
