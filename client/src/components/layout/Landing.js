@@ -25,4 +25,6 @@ const Landing = () => {
   );
 };
 
+// Put Landing in Main component and only show if no one is logged in
+
 export default Landing;
