@@ -1,8 +1,12 @@
 import React, { Fragment } from 'react';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
+import Landing from './Landing';
 
-const Home = () => {
+const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <Fragment>
+      r{!loading && !isAuthenticated && <Landing />}
       <section class='container mobile-container'>
         <div class='landing-inner mobile-landing'>
           <h1 class='large'>Film of the Week</h1>
@@ -92,4 +96,12 @@ const Home = () => {
   );
 };
 
-export default Home;
+Home.propTypes = {
+  auth: PropTypes.object.isRequired
+};
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
+export default connect(mapStateToProps)(Home);
