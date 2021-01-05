@@ -4,7 +4,9 @@ import Navbar from './components/layout/Navbar';
 import Home from './components/layout/Home';
 import Login from './components/auth/Login';
 import Register from './components/auth/Register';
+import MovieCall from './components/MovieCall';
 import Alert from './components/layout/Alert';
+
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
@@ -28,6 +30,7 @@ const App = () => {
         <Fragment>
           <Navbar />
           <Route exact path='/' component={Home} />
+          <Route exact path='/test' component={MovieCall} />
           <section className='container'>
             <Alert />
             <Switch>

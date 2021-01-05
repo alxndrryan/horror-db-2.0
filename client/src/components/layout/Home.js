@@ -7,21 +7,21 @@ const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <Fragment>
       r{!loading && !isAuthenticated && <Landing />}
-      <section class='container mobile-container'>
-        <div class='landing-inner mobile-landing'>
-          <h1 class='large'>Film of the Week</h1>
-          <div class='movie-container'>
+      <section className='container mobile-container'>
+        <div className='landing-inner mobile-landing'>
+          <h1 className='large'>Film of the Week</h1>
+          <div className='movie-container'>
             <img
               src='https://m.media-amazon.com/images/M/MV5BNWMxYTYzYWQtNGZmNy00MTg5LTk1N2MtNzQ5NjQxYjQ5NTJhXkEyXkFqcGdeQXVyMTQxNzMzNDI@._V1_SX300.jpg'
               alt=''
             />
 
-            <div class='flex'>
-              <div class='item-1'>
+            <div className='flex'>
+              <div className='item-1'>
                 <h2>Friday the 13th</h2>
                 <p>R | 95 min</p>
               </div>
-              <div class='item-2'>
+              <div className='item-2'>
                 <p>
                   One summer at Camp Crystal Lake, a group of young counselors
                   begin to get ready to lead campers. Unfortunately for the
@@ -29,7 +29,7 @@ const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
                   and enjoys playing kill the counselor. As bodies fall to the
                   ground in the camp, no one is safe.
                 </p>
-                <hr class='movie-line' />
+                <hr className='movie-line' />
                 <p>
                   <strong>Director: </strong>Sean S. Cunningham
                 </p>
@@ -43,34 +43,34 @@ const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
           </div>
         </div>
       </section>
-      <section class='bg-medium'>
-        <div class='container mobile-container'>
-          <div class='landing-inner'>
-            <h2 class='medium med-h2'>Find A Movie</h2>
+      <section className='bg-medium'>
+        <div className='container mobile-container'>
+          <div className='landing-inner'>
+            <h2 className='medium med-h2'>Find A Movie</h2>
           </div>
 
-          <form action='home.html' class='form movie-form p-2 bg-primary'>
-            <div class='form-group'>
+          <form action='home.html' className='form movie-form p-2 bg-primary'>
+            <div className='form-group'>
               <input type='text' placeholder='Title...' />
             </div>
-            <input class='btn btn-medium' value='Search' type='submit' />
+            <input className='btn btn-medium' value='Search' type='submit' />
           </form>
         </div>
       </section>
-      <section class='container mobile-container'>
-        <div class='landing-inner mobile-landing'>
-          <div class='movie-container user'>
+      <section className='container mobile-container'>
+        <div className='landing-inner mobile-landing'>
+          <div className='movie-container user'>
             <img
               src='https://m.media-amazon.com/images/M/MV5BMjY1NjcxODQ4MV5BMl5BanBnXkFtZTcwMzUxNjM4Mg@@._V1_SX300.jpg'
               alt=''
             />
 
-            <div class='flex'>
-              <div class='item-1'>
+            <div className='flex'>
+              <div className='item-1'>
                 <h2>Paranormal Activity</h2>
                 <p>R | 86 min</p>
               </div>
-              <div class='item-2'>
+              <div className='item-2'>
                 <p>
                   After a young, middle class couple moves into a suburban
                   'starter' tract house, they become increasingly disturbed by a
@@ -78,7 +78,7 @@ const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
                   certainly most active in the middle of the night. Especially
                   when they sleep. Or try to.
                 </p>
-                <hr class='movie-line' />
+                <hr className='movie-line' />
                 <p>
                   <strong>Director: </strong>Oren Peli
                 </p>
