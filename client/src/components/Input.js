@@ -3,7 +3,6 @@ import React from 'react';
 function Input(props) {
   return (
     <div>
-      <label>{props.name}</label>
       <input
         name={props.name}
         type={props.type}

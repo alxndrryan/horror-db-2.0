@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import axios from 'axios';
 import Input from './Input';
 
@@ -33,47 +33,51 @@ function MovieCall() {
   };
 
   return (
-    <div>
-      <div className='container login'>
-        <form className='form-signin'>
-          <h5>Find A Movie</h5>
-          <Input
-            name={'title'}
-            type={'text'}
-            placeholder={'Title'}
-            value={title}
-            required={''}
-            autoComplete={'off'}
-            onChange={handleChange}
-          />
-          <button
-            className='btn btn-lg btn-primary btn-block custom-btn'
-            type='submit'
-            onClick={handleClick}
-          >
-            Search
-          </button>
-        </form>
-      </div>
-      <div>
-        {movie && (
-          <div className='jumbotron'>
-            <h2 className='display-4'>
-              {movie.Title} ({movie.Year})
-            </h2>
-            <p>
-              {movie.Rated} | {movie.Runtime}
-            </p>
-            {/* <p>{movie["Ratings"][2]["Value"]}</p> */}
-            <img src={movie.Poster} alt='Movie Poster' />
-            <p className='lead'>{movie.Plot}</p>
-            <p>Director: {movie.Director}</p>
-            <p>Writer: {movie.Writer}</p>
-            <p>Stars: {movie.Actors}</p>
+    <Fragment>
+      <section className='bg-medium'>
+        <div className='container mobile-container'>
+          <div className='landing-inner'>
+            <h2 className='medium med-h2'>Find A Movie</h2>
           </div>
-        )}
-      </div>
-    </div>
+          <form className='form movie-form p-2 bg-primary'>
+            <div className='form-group'>
+              <Input
+                className={'btn btn-medium'}
+                name={'title'}
+                type={'text'}
+                placeholder={'Title...'}
+                value={title}
+                required={''}
+                autoComplete={'off'}
+                onChange={handleChange}
+              />
+            </div>
+            <input
+              className='btn btn-medium'
+              value='Search'
+              type='submit'
+              onClick={handleClick}
+            />
+          </form>
+        </div>
+      </section>
+      {movie && (
+        <div className='jumbotron'>
+          <h2 className='display-4'>
+            {movie.Title} ({movie.Year})
+          </h2>
+          <p>
+            {movie.Rated} | {movie.Runtime}
+          </p>
+          {/* <p>{movie["Ratings"][2]["Value"]}</p> */}
+          <img src={movie.Poster} alt='Movie Poster' />
+          <p className='lead'>{movie.Plot}</p>
+          <p>Director: {movie.Director}</p>
+          <p>Writer: {movie.Writer}</p>
+          <p>Stars: {movie.Actors}</p>
+        </div>
+      )}
+    </Fragment>
   );
 }
 
