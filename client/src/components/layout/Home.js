@@ -2,11 +2,13 @@ import React, { Fragment } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import Landing from './Landing';
+import MovieCall from '../MovieCall';
 
 const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
   return (
     <Fragment>
-      r{!loading && !isAuthenticated && <Landing />}
+      {!loading && !isAuthenticated && <Landing />}
+
       <section className='container mobile-container'>
         <div className='landing-inner mobile-landing'>
           <h1 className='large'>Film of the Week</h1>
@@ -43,55 +45,7 @@ const Home = ({ auth: { isAuthenticated, loading }, logout }) => {
           </div>
         </div>
       </section>
-      <section className='bg-medium'>
-        <div className='container mobile-container'>
-          <div className='landing-inner'>
-            <h2 className='medium med-h2'>Find A Movie</h2>
-          </div>
-
-          <form action='home.html' className='form movie-form p-2 bg-primary'>
-            <div className='form-group'>
-              <input type='text' placeholder='Title...' />
-            </div>
-            <input className='btn btn-medium' value='Search' type='submit' />
-          </form>
-        </div>
-      </section>
-      <section className='container mobile-container'>
-        <div className='landing-inner mobile-landing'>
-          <div className='movie-container user'>
-            <img
-              src='https://m.media-amazon.com/images/M/MV5BMjY1NjcxODQ4MV5BMl5BanBnXkFtZTcwMzUxNjM4Mg@@._V1_SX300.jpg'
-              alt=''
-            />
-
-            <div className='flex'>
-              <div className='item-1'>
-                <h2>Paranormal Activity</h2>
-                <p>R | 86 min</p>
-              </div>
-              <div className='item-2'>
-                <p>
-                  After a young, middle class couple moves into a suburban
-                  'starter' tract house, they become increasingly disturbed by a
-                  presence that may or may not be somehow demonic but is
-                  certainly most active in the middle of the night. Especially
-                  when they sleep. Or try to.
-                </p>
-                <hr className='movie-line' />
-                <p>
-                  <strong>Director: </strong>Oren Peli
-                </p>
-
-                <p>
-                  <strong>Stars: </strong>Katie Featherston, Micah Sloat, Mark
-                  Fredrichs, Amber Armstrong
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <MovieCall />
     </Fragment>
   );
 };

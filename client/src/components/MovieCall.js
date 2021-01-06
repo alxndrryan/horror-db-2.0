@@ -61,21 +61,72 @@ function MovieCall() {
           </form>
         </div>
       </section>
-      {movie && (
-        <div className='jumbotron'>
-          <h2 className='display-4'>
-            {movie.Title} ({movie.Year})
-          </h2>
-          <p>
-            {movie.Rated} | {movie.Runtime}
-          </p>
-          {/* <p>{movie["Ratings"][2]["Value"]}</p> */}
-          <img src={movie.Poster} alt='Movie Poster' />
-          <p className='lead'>{movie.Plot}</p>
-          <p>Director: {movie.Director}</p>
-          <p>Writer: {movie.Writer}</p>
-          <p>Stars: {movie.Actors}</p>
-        </div>
+      {movie ? (
+        <section className='container mobile-container'>
+          <div className='landing-inner mobile-landing'>
+            <div className='movie-container user'>
+              <img src={movie.Poster} alt='Movie Poster' />
+
+              <div className='flex'>
+                <div className='item-1'>
+                  <h2>{movie.Title}</h2>
+                  <p>
+                    {movie.Rated} | {movie.Runtime}
+                  </p>
+                </div>
+                <div className='item-2'>
+                  <p>{movie.Plot}</p>
+                  <hr className='movie-line' />
+                  <p>
+                    <strong>Director: </strong>
+                    {movie.Director}
+                  </p>
+
+                  <p>
+                    <strong>Stars: </strong>
+                    {movie.Actors}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      ) : (
+        <section className='container mobile-container'>
+          <div className='landing-inner mobile-landing'>
+            <div className='movie-container user'>
+              <img
+                src='https://m.media-amazon.com/images/M/MV5BMjY1NjcxODQ4MV5BMl5BanBnXkFtZTcwMzUxNjM4Mg@@._V1_SX300.jpg'
+                alt=''
+              />
+
+              <div className='flex'>
+                <div className='item-1'>
+                  <h2>Paranormal Activity</h2>
+                  <p>R | 86 min</p>
+                </div>
+                <div className='item-2'>
+                  <p>
+                    After a young, middle class couple moves into a suburban
+                    'starter' tract house, they become increasingly disturbed by
+                    a presence that may or may not be somehow demonic but is
+                    certainly most active in the middle of the night. Especially
+                    when they sleep. Or try to.
+                  </p>
+                  <hr className='movie-line' />
+                  <p>
+                    <strong>Director: </strong>Oren Peli
+                  </p>
+
+                  <p>
+                    <strong>Stars: </strong>Katie Featherston, Micah Sloat, Mark
+                    Fredrichs, Amber Armstrong
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
       )}
     </Fragment>
   );
