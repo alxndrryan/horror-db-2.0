@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { logout } from '../../actions/auth';
+import Search from '../Search';
 
 const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
   const authLinks = (
@@ -24,11 +25,13 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
       </li>
 
       <li className='hide-sm'>
-        <form action='index.html'>
+        <form action='/test'>
           <input type='text' placeholder='Search for movie..' name='search' />
-          <button type='submit'>
-            <i className='fa fa-search'></i>
-          </button>
+          <Link to='/test'>
+            <button type='submit'>
+              <i className='fa fa-search'></i>
+            </button>
+          </Link>
         </form>
       </li>
     </ul>
@@ -53,6 +56,7 @@ const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
           </button>
         </form>
       </li>
+      <Search />
     </ul>
   );
 
