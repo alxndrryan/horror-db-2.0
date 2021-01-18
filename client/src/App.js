@@ -6,6 +6,7 @@ import Login from './components/auth/Login';
 import Register from './components/auth/Register';
 import MovieCall from './components/MovieCall';
 import Alert from './components/layout/Alert';
+import CreateProfile from './components/profile/CreateProfile';
 
 //Redux
 import { Provider } from 'react-redux';
@@ -36,6 +37,7 @@ const App = () => {
             <Switch>
               <Route exact path='/register' component={Register} />
               <Route exact path='/login' component={Login} />
+              <Route exact path='/create-profile' component={CreateProfile} />
             </Switch>
           </section>
         </Fragment>
